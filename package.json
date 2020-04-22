@@ -1,0 +1,33 @@
+{
+  "name": "react-lambda",
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "mailchimp-api-v3": "^1.8.0",
+    "md5": "^2.2.1",
+    "netlify-lambda": "^0.3.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "concurrently \"react-scripts start\" \"npm run start:lambda\"",
+    "start:lambda": "netlify-lambda serve src/lambda",
+    "build": "react-scripts build",
+    "build:lambda": "netlify-lambda build src/lambda",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": {
+    "/.netlify/functions": {
+      "target": "http://localhost:9000",
+      "pathRewrite": {
+        "^/\\.netlify/functions": ""
+      }
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "dotenv": "^5.0.1"
+  }
+}
