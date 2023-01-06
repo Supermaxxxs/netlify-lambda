@@ -5,10 +5,10 @@
   "dependencies": {
     "mailchimp-api-v3": "^1.13.1",
     "md5": "^2.2.1",
-    "netlify-lambda": "^0.3.0",
+    "netlify-lambda": "^2.0.15",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"npm run start:lambda\"",
